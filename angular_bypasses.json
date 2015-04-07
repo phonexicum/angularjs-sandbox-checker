@@ -1,0 +1,37 @@
+[
+  {
+    "html_file_name": "./angular_bypasses/Sandbox_demo.html",
+    "controller_file_name": "./angular_bypasses/Sandbox_demo.js",
+    "comment": "Demonstration of angularjs sandbox boundaries"
+  },
+  {
+    "html_file_name": "./angular_bypasses/Generator_function_ES6.html",
+    "controller_file_name": "./angular_bypasses/Generator_function_ES6.js",
+    "comment": "This angular bypass is based on 'constructor' function for 'generator'-functions, that are part of the EcmaScript 6 standard, and already realized in Firefox, Chrome and newest IE."
+  },
+  {
+    "html_file_name": "./angular_bypasses/Scopes_data_access.html",
+    "controller_file_name": "./angular_bypasses/Scopes_data_access.js",
+    "comment": "This example shows that there is no data differentiation between different instances of different controllers in one angular application in normal mode (but isolated scopes can be created in directive definition)."
+  },
+  {
+    "html_file_name": "./angular_bypasses/Include_implementation_drawback.html",
+    "controller_file_name": "./angular_bypasses/Include_implementation_drawback.js",
+    "comment": "This angular bypass is based on incorrect implementation of directive ng-include, which uses document.writeComment to write url, which it tries do upload. Works in angularjs since version 1.2.0-rc.2. Found by \"Mario Heiderich\""
+  },
+  {
+    "html_file_name": "./angular_bypasses/Class_attr_bypass.html",
+    "controller_file_name": "./angular_bypasses/Class_attr_bypass.js",
+    "comment": "This angular bypass is based on lack of correct interpretation of attributes values, that are not directives for AngularJS, which enables to use ng-include directive inside sandbox expression."
+  },
+  {
+    "html_file_name": "./angular_bypasses/Indirect_Function_call.html",
+    "controller_file_name": "./angular_bypasses/Indirect_Function_call.js",
+    "comment": "This angular bypass is based on lack of validation of function parameters in angular expression, using indirect Function call. Works in angularjs 1.2.19 - 1.2.23. Found by \"avlidienbrunn\"."
+  },
+  {
+    "html_file_name": "./angular_bypasses/Blacklist_false_example.html",
+    "controller_file_name": "./angular_bypasses/Blacklist_false_example.js",
+    "comment": "This angular bypass is an example of unsafe directive, implemented in AngularJS versions v1.1.4 - v1.2.1. Found by \"Mario Heiderich\""
+  }
+]

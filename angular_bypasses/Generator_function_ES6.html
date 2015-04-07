@@ -1,0 +1,7 @@
+<div ng-controller="Generator_function_ES6">
+
+    <!--{{safe_function.constructor('alert("Sandbox bypass");')(); "Successful bypass."}}-->
+    {{unsafe_function1.constructor('alert("Sandbox bypass");')().next(); "Successful bypass."}}
+    <!--{{unsafe_function2.constructor('alert("Sandbox bypass");')().next(); "Successful bypass."}}-->
+
+</div>

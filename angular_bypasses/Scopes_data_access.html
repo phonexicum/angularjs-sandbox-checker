@@ -1,0 +1,17 @@
+<div ng-controller="Scopes_data_access1">
+    <div ng-click="$$nextSibling.$$nextSibling.kk2 = $$nextSibling.$$nextSibling.kk2 + ' - compromised 1'; $parent.$$childTail.$$prevSibling.kk2 = $parent.$$childTail.$$prevSibling.kk2 + ' 2'; $$nextSibling.testCtrl.kk3 = $$nextSibling.testCtrl.kk3 + ' 2';">
+
+        <!--Accessing field __proto__, so we can do smth like "__proto__.$$childTail.kk2 = __proto__.$$childTail.kk2 + ' 3'" is deprecated in angular,
+            but we still have many means for our purpose. -->
+        {{kk1}}
+    </div>
+</div>
+<div ng-controller="Scopes_data_access3 as testCtrl">
+    <div ng-click="$$nextSibling.$$nextSibling.ctrl.message = $$nextSibling.$$nextSibling.ctrl.message + ' - compromised'">
+        {{testCtrl.kk3}}
+    </div>
+</div>
+<div ng-controller="Scopes_data_access2">
+    {{kk2}}
+</div>
+<test-directive></test-directive>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html ng-app="AngularSandboxChecker">
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />-->
+
+    <title>Angular Sandbox Checker</title>
+
+    <!--You must be very accurate using jguery, do not use it for dom manipulations!!! angular will definitely dislike it
+    because it has its own means for dom manipulation. -->
+    <script type="text/javascript" src="./jquery-1.11.2.js"></script>
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>-->
+
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.js"></script>-->
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular-sanitize.js"></script>-->
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>-->
+    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-sanitize.js"></script>-->
+    <!--<script type="text/javascript" src="./angularjs_source/angular-1.3.14.js"></script>-->
+    <!--<script type="text/javascript" src="./angularjs_source/angular-sanitize-1.3.14.js"></script>-->
+    <!--<script type="text/javascript">sanitize_version = "Probably the same";</script>-->
+    <script type="text/javascript" src="angular_version_choosing.js"></script>
+
+    <script type="text/javascript" src="angular_sandbox_controllers.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+
+<!--<body ng-controller="angularSandboxController as sandboxCtrl">-->
+<body ng-controller="angularSandboxController">
+    <header>
+        <h1>Angular v{{version}} Sandbox Checker</h1><h3>(ngSanitize module version - {{sanitize_version}})</h3>
+        <h2>- Bypasses testing -</h2>
+    </header>
+
+    </div>
+    <!--<div ng-controller="test2">-->
+        <!--{{kk2}}-->
+        <!--{{a = ({})}}-->
+    <!--</div>-->
+    <!--<div ng-controller="test1 as t">-->
+
+        <!--<div ng-controller="test2">-->
+            <!--{{kk2}}-->
+            <!--</div>-->
+        <!--{{t.$scope}}-->
+
+        <!--<button onclick="gg.gg=this;console.log(this)">push me</button>-->
+
+    <!-- </div> -->
+
+    <!--<div ng-controller="angularTestCustomBypass as bypassCtrl">-->
+    <div ng-controller="angularTestCustomBypass">
+
+        <table class="code-show-textarea">
+          <tr>
+            <th>JavaScript code:</th>
+            <th>HTML code:</th>
+          </tr>
+          <tr>
+            <td><textarea class="code" spellcheck="false" ng-model="controller_text"></textarea></td>
+            <td><textarea class="code" spellcheck="false" ng-model="html_text"></textarea></td>
+          </tr>
+        </table>
+
+        <table class="code-execute">
+          <tr>
+            <td><button ng-click="eval_function()">eval this code</button></td>
+            <td class="injection"><hr><div id="controller-html-injection-mark"></div><hr></td>
+          </tr>
+        </table>
+
+    </div>
+
+    <hr class="bypasses-examples">
+    <header>
+        <h2>- Bypasses examples -</h2>
+    </header>
+    <div ng-repeat="bypass_files_name in bypasses_files">
+        <!--<div ng-controller="angularSandboxBypass as bypassCtrl" ng-init="init($index, bypass_files_name)">-->
+        <div ng-controller="angularSandboxBypass" ng-init="init($index, bypass_files_name)">
+
+            <table class="preamble" ng-click="show = !show">
+              <tr>
+                <td>open</td>
+                <td ng-bind="bypass_files_name.comment"></td>
+                <td>open</td>
+              </tr>
+            </table>
+
+            <div ng-show="show">
+                <table class="code-show">
+                  <tr>
+                    <th>JavaScript code:</th>
+                    <th>HTML code:</th>
+                  </tr>
+                  <tr>
+                    <!--<td><div class="code" ng-bind="bypassCtrl.controller_text"></div></td>-->
+                    <!--<td><div class="code" ng-bind="bypassCtrl.html_text"></div></td>-->
+                    <td><pre ng-bind="controller_text"></pre></td>
+                    <td><pre ng-bind="html_text"></pre></td>
+                  </tr>
+                </table>
+
+                <table class="code-execute">
+                  <tr>
+                    <td><button ng-click="eval_function()">eval this code</button></td>
+                    <td class="injection"><hr><div id="controller-html-mark-{{$index}}"></div><hr></td>
+                  </tr>
+                </table>
+
+                <hr class="bypasses-examples">
+            </div>
+
+            <br>
+
+        </div>
+    </div>
+</body>
+
+</html>

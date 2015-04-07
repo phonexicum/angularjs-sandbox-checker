@@ -1,0 +1,7 @@
+[
+  {
+    "html_file_name": "./angular_bypasses/Sanitize_svg.html",
+    "controller_file_name": "./angular_bypasses/Sanitize_svg.js",
+    "comment": "Bypass, based on problems with svg sanitization, because of its complexity with namespaces. Planned to be patched since angularjs sanitize version 1.4.0-beta.6."
+  }
+]

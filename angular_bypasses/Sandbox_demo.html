@@ -1,0 +1,17 @@
+<div ng-controller='Sandbox_Demo_Ctrl as ctrl'>
+    "Function constructor" is banned - {{ctrl.some_function.constructor}}<br>
+    "Object constructor" is banned - {{a = {1:2}; a.constructor}}<br>
+
+    <div ng-click="$event.view.alert(1)">Click me - referencing "window" is banned (no alert)</div>
+    <div ng-mouseover="$event.target.ownerDocument.alert(2)">Hover me - referencing DOM element is banned (no alert)</div>
+
+    "call" property is banned - {{ctrl.some_function.call()}}<br>
+    "apply" property is banned - {{ctrl.some_function.apply()}}<br>
+    "bind" property is banned - {{ctrl.some_function.bind()}}<br>
+
+    <!--__proto__ property is banned - {{a = {1:2}; a.__proto__}}<br>-->
+    <!--__defineGetter__ property is banned - {{a = {1:2}; a.__defineGetter__}}<br>-->
+    <!--__defineSetter__ property is banned - {{a = {1:2}; a.__defineSetter__}}<br>-->
+    <!--__lookupGetter__ property is banned - {{a = {1:2}; a.__lookupGetter__}}<br>-->
+    <!--__lookupSetter__ property is banned - {{a = {1:2}; a.__lookupSetter__}}<br>-->
+</div>
